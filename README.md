@@ -1,4 +1,4 @@
-# For some environmenet setting
+# For some environment setting
 
 include
 
