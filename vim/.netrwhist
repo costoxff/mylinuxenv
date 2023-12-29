@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/nocmos/.jupyter'
+let g:netrw_dirhist_2='/home/nocmos/.config/nvim/lua'
+let g:netrw_dirhist_1='/home/nocmos/Temp/rust_test/src'
