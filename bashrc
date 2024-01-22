@@ -1,3 +1,19 @@
+# alias
+alias rmall="rm -rf"
+
+# git branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+# text style
+reset='\[\e[0m\]'
+normal='\[\e[0m\]'
+bold='\[\e[1m\]'
+faint='\[\e[2m\]'
+ltalics='\[\e[3m\]'
+underlined='\[\e[4m\]'
+
 # foreground code
 black='\[\033[30m\]'
 red='\[\033[31m\]'
@@ -22,19 +38,6 @@ white='\[\033[97m\]'
 emoticon="${cyan}>${lmagenta}>${yellow}>${reset}"
 ####### end
 
-
-# git branch
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
 git_branch="${lred}\$(parse_git_branch)${reset}"
-
 mPS1="${debian_chroot:+($debian_chroot)}${bold}${green}\u${lgray}@${bold}(${cyan}\t${bold}):${blue}\w ${git_branch}\n${emoticon} "
 
-if [ "$color_prompt" = yes ]; then
-	PS1=${mPS1}
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
