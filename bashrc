@@ -39,5 +39,5 @@ emoticon="${cyan}>${lmagenta}>${yellow}>${reset}"
 ####### end
 
 git_branch="${lred}\$(parse_git_branch)${reset}"
-mPS1="${debian_chroot:+($debian_chroot)}${bold}${green}\u${lgray}@${bold}(${cyan}\t${bold}):${blue}\w ${git_branch}\n${emoticon} "
+mPS1="${debian_chroot:+($debian_chroot)}${bold}${green}\u${lgray}@${bold}(${cyan}\t${white}):${blue}\w ${git_branch}\n${emoticon} "
 
