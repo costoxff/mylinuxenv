@@ -24,6 +24,8 @@ set noswapfile              " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 set rnu
 
+autocmd FileType make set noexpendtab
+
 " theme
 colorscheme pire
 set t_Co=256
@@ -32,3 +34,5 @@ set t_Co=256
 map <F2> :echo 'current time is ' . strftime('%c')<CR>
 
 nnoremap <tab> :wincmd w<cr>
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
